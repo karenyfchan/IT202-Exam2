@@ -42,7 +42,7 @@
             success: function(data){
             response="";
             for(i in data){
-            response+="ID: "+data[i].ID+" // UUID: "+data[i].Department+"<br>";
+            response+="Employee: "+data[i].name+" // Department: "+data[i].department+"<br>";
             }
             $("#list").html(result);
             }
@@ -63,7 +63,7 @@
             // clone card
             var clone = $(".template").clone();
             // update values
-            clone.find(".card-title").text(v.Name);
+            clone.find(".card-title").text(v.name);
 
 
 
@@ -71,12 +71,12 @@
 
             clone.find(".card-title").attr("data-results", v.results);
 
-            clone.find(".card-subtitle").text(v.Department);
+            clone.find(".card-subtitle").text(v.department);
             
             if (v.violations) {
               //clone.find(".card-text").text(v.violations);
             } else {
-              clone.find(".card-text").text("")
+              clone.find(".card-text").text(v.job_title);
             }
             
             
